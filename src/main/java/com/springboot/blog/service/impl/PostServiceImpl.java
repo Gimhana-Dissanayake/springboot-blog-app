@@ -10,6 +10,7 @@ import com.springboot.blog.payload.PostResponse;
 import com.springboot.blog.repository.PostRepository;
 import com.springboot.blog.service.PostService;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -113,7 +114,7 @@ public class PostServiceImpl implements PostService {
     // convert DTO to entity
     private Post mapToEntity(PostDto postDto) {
 
-        Post post = mapper.map(postDto, Post.class)
+        Post post = mapper.map(postDto, Post.class);
 
         // Post post = new Post();
         // post.setTitle(postDto.getTitle());

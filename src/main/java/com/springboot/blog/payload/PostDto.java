@@ -1,8 +1,7 @@
 package com.springboot.blog.payload;
 
-import lombok.Data;
+import java.util.Set;
 
-@Data
 public class PostDto {
 
     private Long id;
@@ -12,6 +11,8 @@ public class PostDto {
     private String description;
 
     private String content;
+
+    private Set<CommentDto> comments;
 
     public Long getId() {
         return id;
@@ -43,6 +44,14 @@ public class PostDto {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Set<CommentDto> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<CommentDto> comments) {
+        this.comments = comments;
     }
 
 }
